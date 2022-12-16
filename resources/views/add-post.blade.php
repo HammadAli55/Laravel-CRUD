@@ -7,8 +7,8 @@
     <title>Add Post</title>
 </head>
 <body>
-    @if(Session::has ('post_add'))
-    <span>({Session::get(post_add)})</span>
+    @if(Session::has('post_add'))
+    <span>{{Session::get('post_add')}}</span>
     @endif
     <form method="post" action="{{route('save.post')}}">
         @csrf
