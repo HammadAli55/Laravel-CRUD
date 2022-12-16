@@ -17,6 +17,7 @@
     </style>
 </head>
 <body>
+    <a style="float: right" href="{{route('post.add')}}"></a>
     <table>
         <tr>
             <th>ID</th>
@@ -28,6 +29,10 @@
             <td> {{$post -> id}} </td>
             <td> {{$post -> name}} </td>
             <td> {{$post -> description}} </td>
+            <td>
+                <a href="/edit-post/{{$post->id}}"> Edit </a>
+                <a href="/delete-post/{{$post->id}}"> Delete </a>
+            </td>
         </tr>
         @endforeach
     </table>
