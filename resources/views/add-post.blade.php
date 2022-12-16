@@ -7,9 +7,6 @@
     <title>Add Post</title>
 </head>
 <body>
-    @if(Session::has('post_add'))
-    <span>{{Session::get('post_add')}}</span>
-    @endif
     <form method="post" action="{{route('save.post')}}">
         @csrf
         Post: <br><input type="text" name="name" value=""><br>
@@ -18,6 +15,16 @@
         <button>
             <a href="/post-list">Back</a>
         </button>
+        @if(Session::has('post_add'))
+            <span>
+                <b>{{Session::get('post_add')}}</b>
+            </span>
+        @endif
+        @if(Session::has('post_add_message'))
+            <span>
+                <b>{{Session::get('post_add_message')}}</b>
+            </span>
+        @endif
     </form>
 </body>
 </html>

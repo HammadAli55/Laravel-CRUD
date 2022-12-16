@@ -18,7 +18,7 @@
 </head>
 <body>
     @if(Session::has('post_update'))
-    <span>{{Session::get('post_update')}}</span>
+        <span>{{Session::get('post_update')}}</span>
     @endif
     <button>
         <a style="float: right" href="{{route('post.add')}}">Add Post</a>

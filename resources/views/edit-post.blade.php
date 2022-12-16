@@ -7,9 +7,6 @@
         <title>Add Post</title>
     </head>
     <body>
-        @if(Session::has('post_update'))
-        <span>{{Session::get('post_update')}}</span>
-        @endif
         <form method="post" action="{{route('update.post')}}">
             @csrf
             <input type="hidden" name="id" value="{{$post -> id}}">
@@ -19,6 +16,9 @@
             <button>
                 <a href="/post-list">Back</a>
             </button>
+            @if(Session::has('post_update'))
+                <span><b>{{Session::get('post_update')}}</b></span>
+            @endif
         </form>
     </body>
 </html>

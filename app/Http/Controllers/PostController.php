@@ -12,12 +12,15 @@ class PostController extends Controller
     }
     
     public function savePost(Request $request) {
-       DB::table('posts')->insert([
-        'name' => $request -> name,
-        'description' => $request -> description
-       ]);
-
-       return back() -> with('post_add', 'Post added successfully');
+        if(!$request->name) {
+            return back() -> with('post_add_message', 'Please enter data!!');
+        } else {
+            DB::table('posts')->insert([
+                'name' => $request -> name,
+                'description' => $request -> description
+            ]);
+            return back() -> with('post_add', 'Post added successfully');
+        }
     }
 
     public function postList() {
