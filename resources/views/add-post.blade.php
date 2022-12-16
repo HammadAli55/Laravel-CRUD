@@ -14,7 +14,10 @@
         @csrf
         Post: <br><input type="text" name="name" value=""><br>
         Description: <br><textarea name="description"></textarea><br>
-        <Input type="submit" value="submit"></Input>
+        <button type="submit" value="submit">Submit</button>
+        <button>
+            <a href="/post-list">Back</a>
+        </button>
     </form>
 </body>
 </html>

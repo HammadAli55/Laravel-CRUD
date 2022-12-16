@@ -17,12 +17,18 @@
     </style>
 </head>
 <body>
-    <a style="float: right" href="{{route('post.add')}}"></a>
+    @if(Session::has('post_update'))
+    <span>{{Session::get('post_update')}}</span>
+    @endif
+    <button>
+        <a style="float: right" href="{{route('post.add')}}">Add Post</a>
+    </button>
     <table>
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Operations</th>
         </tr>
         @foreach ($posts as $post)
         <tr>

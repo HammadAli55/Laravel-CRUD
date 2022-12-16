@@ -15,7 +15,10 @@
             <input type="hidden" name="id" value="{{$post -> id}}">
             Post: <br><input type="text" name="name" value="{{$post -> name}}"><br>
             Description: <br><textarea name="description">{{$post-> description}}</textarea><br>
-            <Input type="submit" value="Submit"></Input>
+            <button type="submit" value="Submit">Submit</button>
+            <button>
+                <a href="/post-list">Back</a>
+            </button>
         </form>
     </body>
 </html>
