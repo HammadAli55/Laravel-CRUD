@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 Route::get('/add-post', [PostController::class, 'addPost']) -> name('post.add');
 Route::post('/add-post', [PostController::class, 'savePost']) -> name('save.post');
+
+Route::get('/post-list', [PostController::class, 'postList']) -> name('post.list');

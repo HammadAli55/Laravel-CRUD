@@ -10,6 +10,7 @@ class PostController extends Controller
     public function addPost() {
         return view('add-post');
     }
+    
     public function savePost(Request $request) {
        DB::table('posts')->insert([
         'name' => $request -> name,
@@ -17,5 +18,10 @@ class PostController extends Controller
        ]);
 
        return back() -> with('post_add', 'Post added successfully');
+    }
+
+    public function postList() {
+        $posts = DB::table('posts')->get();
+        return view('post-list', compact('posts'));
     }
 }
